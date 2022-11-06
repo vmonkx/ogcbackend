@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prices",
+  "info": {
+    "name": "Price",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "service": {
+      "via": "prices",
+      "model": "service"
+    },
+    "title": {
+      "type": "string"
+    },
+    "priceItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.price-item"
+    }
+  }
+}

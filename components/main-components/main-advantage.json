@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_main_components_main_advantages",
+  "info": {
+    "name": "MainAdvantage",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "numbersAdvantage": {
+      "type": "json"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

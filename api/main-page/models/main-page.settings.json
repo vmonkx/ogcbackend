@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_pages",
+  "info": {
+    "name": "MainPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "MainAdvantage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "main-components.main-advantage"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "main-components.hero"
+    }
+  }
+}

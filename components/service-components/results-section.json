@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_components_results_sections",
+  "info": {
+    "name": "ResultsSection",
+    "icon": "feather-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "resultItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.result-item"
+    }
+  }
+}

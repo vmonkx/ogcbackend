@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "name": "Service",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "category": {
+      "model": "category",
+      "via": "services"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "article": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.article-service"
+    },
+    "advantage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.advantage"
+    },
+    "compare": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.compare-section"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.video-section"
+    },
+    "prices": {
+      "collection": "price",
+      "via": "service"
+    },
+    "resultsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.results-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.seo"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "coverColor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.cover-color",
+      "required": true
+    },
+    "personals": {
+      "via": "services",
+      "collection": "personal"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_service_components_seos",
+  "info": {
+    "name": "seo",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "lang": {
+      "type": "string",
+      "default": "ru"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.meta"
+    },
+    "shareImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

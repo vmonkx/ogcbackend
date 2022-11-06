@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_components_article_services",
+  "info": {
+    "name": "ArticleService",
+    "icon": "atlas",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

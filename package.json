@@ -1,0 +1,44 @@
+{
+    "name": "ogcsite-backend",
+    "private": true,
+    "version": "0.1.0",
+    "description": "A Strapi application",
+    "scripts": {
+        "develop": "strapi develop",
+        "start": "strapi start",
+        "build": "strapi build",
+        "strapi": "strapi"
+    },
+    "dependencies": {
+        "axios": "^0.26.1",
+        "fast-average-color-node": "^2.4.0",
+        "knex": "^0.21.18",
+        "pg": "8.5.1",
+        "slugify": "1.6.5",
+        "strapi": "3.6.9",
+        "strapi-admin": "3.6.9",
+        "strapi-connector-bookshelf": "3.6.9",
+        "strapi-plugin-ckeditor5": "^1.15.0",
+        "strapi-plugin-content-manager": "3.6.9",
+        "strapi-plugin-content-type-builder": "3.6.9",
+        "strapi-plugin-email": "3.6.9",
+        "strapi-plugin-graphql": "3.6.9",
+        "strapi-plugin-upload": "3.6.9",
+        "strapi-plugin-users-permissions": "3.6.9",
+        "strapi-provider-email-nodemailer": "3.6.9",
+        "strapi-provider-upload-cloudinary": "3.6.9",
+        "strapi-provider-upload-local": "3.6.9",
+        "strapi-utils": "3.6.9"
+    },
+    "author": {
+        "name": "A Strapi developer"
+    },
+    "strapi": {
+        "uuid": "fe3d0f24-a440-447f-b409-0f28bcce4097"
+    },
+    "engines": {
+        "node": ">=10.16.0 <=14.x.x",
+        "npm": ">=6.0.0"
+    },
+    "license": "MIT"
+}
