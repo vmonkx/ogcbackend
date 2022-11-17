@@ -1,4 +1,5 @@
 const axios = require("axios").default;
+require('dotenv').config();
 
 const DICT = {
   firstName: "Имя",
@@ -7,11 +8,10 @@ const DICT = {
 };
 
 module.exports.sendMsg = async (req) => {
-  
   let fieldsOrder = ["⭐️ Новая заявка с сайта"];
   if (req) {
     const message = req.data;
-    
+
     for (const key in message) {
       if (Object.hasOwnProperty.call(message, key)) {
         fieldsOrder.push(`<b>${DICT[key]}</b>: ${message[key]}`);
@@ -27,10 +27,10 @@ module.exports.sendMsg = async (req) => {
 
   msg = encodeURI(msg);
 
+  const api = process.env.TELEGRAM_API;
+
   await axios
-    .post(
-      `https://api.telegram.org/bot1679995883:AAHS05az-5GfGEQYAEWV5EM5OidjGwEQXPE/sendMessage?chat_id=-584672924&parse_mode=html&text=${msg}`
-    )
+    .post(`${api}${msg}`)
     .then((response) => {
       console.log("statusCode:", response.status);
     })
