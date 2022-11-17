@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_service_components_cover_colors",
+  "info": {
+    "icon": "adjust",
+    "description": "",
+    "displayName": "coverColor"
+  },
+  "options": {},
+  "attributes": {
+    "gradientStart": {
+      "type": "string",
+      "default": "rgba(182, 180, 193,1)"
+    },
+    "gradientEnd": {
+      "type": "string",
+      "default": "rgba(182, 180, 193, 0)"
+    },
+    "urlImage": {
+      "type": "string",
+      "private": true,
+      "required": false
+    }
+  }
+}

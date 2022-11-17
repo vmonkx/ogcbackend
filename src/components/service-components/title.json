@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_service_components_titles",
+  "info": {
+    "displayName": "title",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

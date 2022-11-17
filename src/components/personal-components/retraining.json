@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_personal_components_retrainings",
+  "info": {
+    "icon": "address-book",
+    "displayName": "retraining"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

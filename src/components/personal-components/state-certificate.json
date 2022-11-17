@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_personal_components_state_certificates",
+  "info": {
+    "icon": "landmark",
+    "displayName": "stateCertificate"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

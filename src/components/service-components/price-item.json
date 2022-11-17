@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_service_components_price_items",
+  "info": {
+    "icon": "dollar-sign",
+    "displayName": "PriceItem"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "code": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}

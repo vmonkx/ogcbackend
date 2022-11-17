@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_personal_components_courses",
+  "info": {
+    "icon": "closed-captioning",
+    "displayName": "courses"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

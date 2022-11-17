@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personals",
+  "info": {
+    "singularName": "personal",
+    "pluralName": "personals",
+    "displayName": "Personal",
+    "name": "personal"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "avatar": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.seo"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "personal"
+    },
+    "cover": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "diploma": {
+      "type": "text"
+    },
+    "internship": {
+      "type": "text"
+    },
+    "retraining": {
+      "type": "component",
+      "repeatable": true,
+      "component": "personal-components.retraining"
+    },
+    "certificates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "personal-components.certificates"
+    },
+    "stateCertificate": {
+      "type": "component",
+      "repeatable": true,
+      "component": "personal-components.state-certificate"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "personals"
+    },
+    "courses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "personal-components.courses"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "miniature": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false,
+      "required": false
+    }
+  }
+}

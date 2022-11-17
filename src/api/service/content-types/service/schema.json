@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "name": "service",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "services"
+    },
+    "article": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.article-service"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.video-section"
+    },
+    "prices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::price.price",
+      "mappedBy": "service"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.seo"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "coverColor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.cover-color",
+      "required": true
+    },
+    "personals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::personal.personal",
+      "mappedBy": "services"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "advancedContent": {
+      "type": "dynamiczone",
+      "components": [
+        "service-components.advantage"
+      ]
+    },
+    "resultSection": {
+      "type": "dynamiczone",
+      "components": [
+        "service-components.result-item"
+      ]
+    },
+    "compareSection": {
+      "type": "dynamiczone",
+      "components": [
+        "service-components.compare-item"
+      ]
+    }
+  }
+}

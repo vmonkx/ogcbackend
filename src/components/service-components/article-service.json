@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_service_components_article_services",
+  "info": {
+    "icon": "atlas",
+    "description": "",
+    "displayName": "ArticleService"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

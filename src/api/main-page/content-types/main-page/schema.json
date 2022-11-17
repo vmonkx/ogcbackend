@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_pages",
+  "info": {
+    "singularName": "main-page",
+    "pluralName": "main-pages",
+    "displayName": "Main-page",
+    "name": "main-page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "MainAdvantage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "main-components.main-advantage"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "main-components.hero"
+    },
+    "videoHero": {
+      "allowedTypes": [
+        "videos",
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

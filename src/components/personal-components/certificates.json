@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_personal_components_certificates",
+  "info": {
+    "icon": "bible",
+    "displayName": " certificates"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

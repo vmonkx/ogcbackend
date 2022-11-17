@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_service_components_result_items",
+  "info": {
+    "icon": "american-sign-language-interpreting",
+    "displayName": "ResultItem"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    }
+  }
+}

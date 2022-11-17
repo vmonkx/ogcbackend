@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_service_components_compare_sections",
+  "info": {
+    "icon": "mars-double",
+    "displayName": "CompareSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "CompareItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.compare-item"
+    }
+  }
+}

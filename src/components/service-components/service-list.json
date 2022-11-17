@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_service_components_service_lists",
+  "info": {
+    "icon": "list",
+    "description": "",
+    "displayName": "serviceList"
+  },
+  "options": {},
+  "attributes": {}
+}

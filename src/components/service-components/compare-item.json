@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_service_components_compare_items",
+  "info": {
+    "icon": "venus",
+    "description": "",
+    "displayName": "CompareItem"
+  },
+  "options": {},
+  "attributes": {
+    "before": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "after": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_components_advantages",
+  "info": {
+    "icon": "child",
+    "displayName": "Advantage"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "listAdvantage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-components.list-advantage"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_service_components_video_sections",
+  "info": {
+    "icon": "film",
+    "description": "",
+    "displayName": "VideoSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

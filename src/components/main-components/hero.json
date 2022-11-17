@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_main_components_heroes",
+  "info": {
+    "icon": "archway",
+    "description": "",
+    "displayName": "hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "info": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "media",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_service_components_list_advantages",
+  "info": {
+    "icon": "list-ol",
+    "description": "",
+    "displayName": "listAdvantage"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}
