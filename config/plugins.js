@@ -12,6 +12,6 @@ module.exports = ({ env }) => ({
         delete: {},
       },
     },
-  },
-  ckeditor: true,
+  }
+
 });
