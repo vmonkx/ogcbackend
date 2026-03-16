@@ -26,6 +26,9 @@
     "slugify": "^1.6.5",
     "styled-components": "^6.0.0"
   },
+  "overrides": {
+    "@strapi/design-system": "2.2.0"
+  },
   "author": {
     "name": "Vladislav"
   },
