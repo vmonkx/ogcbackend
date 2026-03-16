@@ -15,7 +15,8 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:"],
+          "script-src": ["'self'", "https:"],
+          "connect-src": ["'self'", "https:", "blob:"],
           "img-src": [
             "'self'",
             "data:",
@@ -30,6 +31,11 @@ module.exports = [
             "dl.airtable.com",
             "res.cloudinary.com",
           ],
+          "style-src": [
+            "'self'",
+            "'unsafe-inline'",
+          ],
+          "font-src": ["'self'"],
           upgradeInsecureRequests: null,
         },
       },

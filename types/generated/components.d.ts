@@ -23,7 +23,13 @@ export interface MainComponentsMainAdvantage extends Struct.ComponentSchema {
     icon: 'bars';
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     numbersAdvantage: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
@@ -102,7 +108,13 @@ export interface ServiceComponentsArticleService
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     subtitle: Schema.Attribute.String;
-    text: Schema.Attribute.RichText;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
   };
 }
 

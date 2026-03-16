@@ -1,4 +1,4 @@
-
+import { StrapiMediaLib, StrapiUploadAdapter } from '@_sh/strapi-plugin-ckeditor';
 
 const config = {
   locales: [

@@ -9,10 +9,9 @@
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string"
@@ -28,15 +27,23 @@
       ]
     },
     "description": {
-      "type": "richtext"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
     },
     "article": {
-      "type": "richtext"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
     },
     "seo": {
       "type": "component",
-      "repeatable": false,
-      "component": "service-components.seo"
+      "component": "service-components.seo",
+      "repeatable": false
     },
     "featured": {
       "type": "boolean"
