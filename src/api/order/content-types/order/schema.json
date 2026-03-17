@@ -13,7 +13,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "firstName": {
       "type": "string"
     },
     "phone": {

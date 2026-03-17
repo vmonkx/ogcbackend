@@ -14,6 +14,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     // some more logic
 
     let entity;
+
+
+
     if (ctx.is("multipart")) {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services.order.create(data, { files });
