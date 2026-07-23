@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_mobile_blocks_bullet_cards",
+  "info": {
+    "displayName": "Bullet Cards",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cardItem": {
+      "type": "component",
+      "component": "mobile-blocks.card-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

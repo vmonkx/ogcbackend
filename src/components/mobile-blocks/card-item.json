@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_mobile_blocks_card_items",
+  "info": {
+    "displayName": "Card Item",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "icons": {
+      "type": "enumeration",
+      "enum": [
+        "moisture",
+        "clock",
+        "acne_skin",
+        "dry_skin",
+        "dumbbell",
+        "face_countur",
+        "measuring_tape",
+        "beach_umbrella",
+        "eye_open",
+        "calendar_repeat",
+        "butt_lift_light",
+        "facelifting",
+        "sparkless",
+        "runner",
+        "meditation",
+        "smooth_skin",
+        "exp_doctor",
+        "face_injections",
+        "lips",
+        "symmetry",
+        "check_fillers",
+        "dna"
+      ]
+    },
+    "boldText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

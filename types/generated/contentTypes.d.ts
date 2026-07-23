@@ -869,8 +869,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    increments: true;
-    timestamps: true;
   };
   attributes: {
     advancedContent: Schema.Attribute.DynamicZone<
@@ -900,6 +898,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'api::service.service'
     > &
       Schema.Attribute.Private;
+    mobileLayout: Schema.Attribute.DynamicZone<
+      [
+        'mobile-blocks.quick-facts',
+        'mobile-blocks.bullet-cards',
+        'mobile-blocks.timeline-block',
+        'mobile-blocks.alert-block',
+      ]
+    >;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     personals: Schema.Attribute.Relation<
       'manyToMany',

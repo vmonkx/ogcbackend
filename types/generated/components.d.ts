@@ -36,6 +36,156 @@ export interface MainComponentsMainAdvantage extends Struct.ComponentSchema {
   };
 }
 
+export interface MobileBlocksAlertBlock extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_alert_blocks';
+  info: {
+    displayName: 'Alert Block';
+    icon: 'doctor';
+  };
+  attributes: {
+    listItem: Schema.Attribute.Component<'mobile-blocks.list-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MobileBlocksBulletCards extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_bullet_cards';
+  info: {
+    displayName: 'Bullet Cards';
+    icon: 'dashboard';
+  };
+  attributes: {
+    cardItem: Schema.Attribute.Component<'mobile-blocks.card-item', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MobileBlocksCardItem extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_card_items';
+  info: {
+    displayName: 'Card Item';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    boldText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    icons: Schema.Attribute.Enumeration<
+      [
+        'moisture',
+        'clock',
+        'acne_skin',
+        'dry_skin',
+        'dumbbell',
+        'face_countur',
+        'measuring_tape',
+        'beach_umbrella',
+        'eye_open',
+        'calendar_repeat',
+        'butt_lift_light',
+        'facelifting',
+        'sparkless',
+        'runner',
+        'meditation',
+        'smooth_skin',
+        'exp_doctor',
+        'face_injections',
+        'lips',
+        'symmetry',
+        'check_fillers',
+        'dna',
+      ]
+    >;
+  };
+}
+
+export interface MobileBlocksFactItem extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_fact_items';
+  info: {
+    displayName: 'Fact Item';
+    icon: 'check';
+  };
+  attributes: {
+    icons: Schema.Attribute.Enumeration<
+      [
+        'moisture',
+        'clock',
+        'acne_skin',
+        'dry_skin',
+        'dumbbell',
+        'face_countur',
+        'measuring_tape',
+        'beach_umbrella',
+        'eye_open',
+        'calendar_repeat',
+        'butt_lift_light',
+        'facelifting',
+        'sparkless',
+        'runner',
+        'meditation',
+        'smooth_skin',
+        'exp_doctor',
+        'face_injections',
+        'lips',
+        'symmetry',
+        'check_fillers',
+        'dna',
+      ]
+    >;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface MobileBlocksListItem extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_list_items';
+  info: {
+    displayName: 'List Item';
+    icon: 'apps';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
+export interface MobileBlocksQuickFacts extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_quick_facts';
+  info: {
+    displayName: 'Quick Facts';
+    icon: 'apps';
+  };
+  attributes: {
+    factItem: Schema.Attribute.Component<'mobile-blocks.fact-item', true>;
+  };
+}
+
+export interface MobileBlocksTimelineBlock extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_timeline_blocks';
+  info: {
+    displayName: 'Timeline Block';
+    icon: 'clock';
+  };
+  attributes: {
+    timelineStep: Schema.Attribute.Component<
+      'mobile-blocks.timeline-step',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MobileBlocksTimelineStep extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_blocks_timeline_steps';
+  info: {
+    displayName: 'Timeline Step';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    period: Schema.Attribute.String;
+  };
+}
+
 export interface PersonalComponentsCertificates extends Struct.ComponentSchema {
   collectionName: 'components_personal_components_certificates';
   info: {
@@ -288,6 +438,14 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'main-components.hero': MainComponentsHero;
       'main-components.main-advantage': MainComponentsMainAdvantage;
+      'mobile-blocks.alert-block': MobileBlocksAlertBlock;
+      'mobile-blocks.bullet-cards': MobileBlocksBulletCards;
+      'mobile-blocks.card-item': MobileBlocksCardItem;
+      'mobile-blocks.fact-item': MobileBlocksFactItem;
+      'mobile-blocks.list-item': MobileBlocksListItem;
+      'mobile-blocks.quick-facts': MobileBlocksQuickFacts;
+      'mobile-blocks.timeline-block': MobileBlocksTimelineBlock;
+      'mobile-blocks.timeline-step': MobileBlocksTimelineStep;
       'personal-components.certificates': PersonalComponentsCertificates;
       'personal-components.courses': PersonalComponentsCourses;
       'personal-components.retraining': PersonalComponentsRetraining;

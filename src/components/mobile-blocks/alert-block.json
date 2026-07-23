@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_mobile_blocks_alert_blocks",
+  "info": {
+    "displayName": "Alert Block",
+    "icon": "doctor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "listItem": {
+      "type": "component",
+      "component": "mobile-blocks.list-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

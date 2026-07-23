@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_mobile_blocks_timeline_blocks",
+  "info": {
+    "displayName": "Timeline Block",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "timelineStep": {
+      "type": "component",
+      "component": "mobile-blocks.timeline-step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

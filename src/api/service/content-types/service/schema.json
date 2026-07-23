@@ -9,10 +9,9 @@
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
@@ -36,13 +35,13 @@
     },
     "article": {
       "type": "component",
-      "repeatable": true,
-      "component": "service-components.article-service"
+      "component": "service-components.article-service",
+      "repeatable": true
     },
     "video": {
       "type": "component",
-      "repeatable": true,
-      "component": "service-components.video-section"
+      "component": "service-components.video-section",
+      "repeatable": true
     },
     "prices": {
       "type": "relation",
@@ -52,16 +51,16 @@
     },
     "seo": {
       "type": "component",
-      "repeatable": false,
-      "component": "service-components.seo"
+      "component": "service-components.seo",
+      "repeatable": false
     },
     "featured": {
       "type": "boolean"
     },
     "coverColor": {
       "type": "component",
-      "repeatable": false,
       "component": "service-components.cover-color",
+      "repeatable": false,
       "required": true
     },
     "personals": {
@@ -90,6 +89,15 @@
       "type": "dynamiczone",
       "components": [
         "service-components.compare-item"
+      ]
+    },
+    "mobileLayout": {
+      "type": "dynamiczone",
+      "components": [
+        "mobile-blocks.quick-facts",
+        "mobile-blocks.bullet-cards",
+        "mobile-blocks.timeline-block",
+        "mobile-blocks.alert-block"
       ]
     }
   }

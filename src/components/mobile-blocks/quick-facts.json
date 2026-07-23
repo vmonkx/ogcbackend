@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_mobile_blocks_quick_facts",
+  "info": {
+    "displayName": "Quick Facts",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "factItem": {
+      "type": "component",
+      "component": "mobile-blocks.fact-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_mobile_blocks_list_items",
+  "info": {
+    "displayName": "List Item",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
