@@ -4,4 +4,7 @@ module.exports = {
     maxLimit: 100,
     withCount: true,
   },
+  documents: {
+    strictParams: true,
+  },
 };

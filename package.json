@@ -4,25 +4,30 @@
   "version": "1.0.0",
   "description": "A Strapi v4 application",
   "scripts": {
-    "develop": "strapi develop",
-    "dev": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@_sh/strapi-plugin-ckeditor": "^7.1.0",
-    "@strapi/plugin-graphql": "5.39.0",
-    "@strapi/plugin-users-permissions": "5.39.0",
-    "@strapi/provider-email-nodemailer": "5.39.0",
-    "@strapi/provider-upload-cloudinary": "5.39.0",
-    "@strapi/strapi": "5.39.0",
+    "@_sh/strapi-plugin-ckeditor": "^7.1.1",
+    "@strapi/plugin-graphql": "5.51.0",
+    "@strapi/database": "5.51.0",
+    "@strapi/plugin-users-permissions": "5.51.0",
+    "@strapi/provider-email-nodemailer": "5.51.0",
+    "@strapi/provider-upload-cloudinary": "5.51.0",
+    "@strapi/strapi": "5.51.0",
     "axios": "^0.27.2",
     "fast-average-color-node": "3.2.0",
-    "pg": "8.6.0",
+    "pg": "8.20.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
+    "react-router-dom": "^6.30.3",
     "slugify": "^1.6.5",
     "styled-components": "^6.0.0"
   },
@@ -36,7 +41,7 @@
     "uuid": "fe3d0f24-a440-447f-b409-0f28bcce4097"
   },
   "engines": {
-    "node": ">=20.0.0 <=24.x.x",
+    "node": ">=20.0.0 <=26.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
