@@ -1,14 +1,5 @@
 module.exports = [
   "strapi::errors",
-  "strapi::security",
-  "strapi::cors",
-  "strapi::poweredBy",
-  "strapi::logger",
-  "strapi::query",
-  "strapi::body",
-  "strapi::session",
-  "strapi::favicon",
-  "strapi::public",
   {
     name: "strapi::security",
     config: {
@@ -23,6 +14,8 @@ module.exports = [
             "blob:",
             "dl.airtable.com",
             "res.cloudinary.com",
+            "i.ytimg.com",
+            "img.youtube.com",
           ],
           "media-src": [
             "'self'",
@@ -30,6 +23,15 @@ module.exports = [
             "blob:",
             "dl.airtable.com",
             "res.cloudinary.com",
+            "youtube.com",
+            "www.youtube.com",
+          ],
+          "frame-src": [
+            "'self'",
+            "youtube.com",
+            "www.youtube.com",
+            "youtu.be",
+            "https://www.youtube-nocookie.com",
           ],
           "style-src": [
             "'self'",
@@ -41,4 +43,12 @@ module.exports = [
       },
     },
   },
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
 ];

@@ -465,7 +465,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -501,7 +501,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     createdAt: Schema.Attribute.DateTime;
@@ -585,7 +585,7 @@ export interface ApiDocDoc extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     createdAt: Schema.Attribute.DateTime;
@@ -765,6 +765,7 @@ export interface ApiPersonalPersonal extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     diploma: Schema.Attribute.Text;
+    experience: Schema.Attribute.String;
     internship: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -774,6 +775,7 @@ export interface ApiPersonalPersonal extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     miniature: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
+    patientsCount: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     retraining: Schema.Attribute.Component<
       'personal-components.retraining',
@@ -785,6 +787,10 @@ export interface ApiPersonalPersonal extends Struct.CollectionTypeSchema {
     specialty: Schema.Attribute.String;
     stateCertificate: Schema.Attribute.Component<
       'personal-components.state-certificate',
+      true
+    >;
+    statistics: Schema.Attribute.Component<
+      'personal-components.statistics',
       true
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -826,6 +832,49 @@ export interface ApiPricePrice extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProblemProblem extends Struct.CollectionTypeSchema {
+  collectionName: 'problems';
+  info: {
+    description: '\u042D\u0441\u0442\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B \u0438 \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u043A \u043F\u0440\u043E\u0446\u0435\u0434\u0443\u0440\u0430\u043C';
+    displayName: 'Problem';
+    name: 'problem';
+    pluralName: 'problems';
+    singularName: 'problem';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    coverColor: Schema.Attribute.Component<
+      'service-components.cover-color',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::problem.problem'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'service-components.seo', false>;
+    services: Schema.Attribute.Relation<'manyToMany', 'api::service.service'>;
+    shortName: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'>;
+    symptoms: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPromoPromo extends Struct.CollectionTypeSchema {
   collectionName: 'promos';
   info: {
@@ -843,7 +892,7 @@ export interface ApiPromoPromo extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     createdAt: Schema.Attribute.DateTime;
@@ -853,7 +902,7 @@ export interface ApiPromoPromo extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     featured: Schema.Attribute.Boolean;
@@ -925,6 +974,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'api::personal.personal'
     >;
     prices: Schema.Attribute.Relation<'oneToMany', 'api::price.price'>;
+    problems: Schema.Attribute.Relation<'manyToMany', 'api::problem.problem'>;
     publishedAt: Schema.Attribute.DateTime;
     resultSection: Schema.Attribute.DynamicZone<
       ['service-components.result-item']
@@ -1459,6 +1509,7 @@ declare module '@strapi/strapi' {
       'api::order.order': ApiOrderOrder;
       'api::personal.personal': ApiPersonalPersonal;
       'api::price.price': ApiPricePrice;
+      'api::problem.problem': ApiProblemProblem;
       'api::promo.promo': ApiPromoPromo;
       'api::service.service': ApiServiceService;
       'plugin::content-releases.release': PluginContentReleasesRelease;

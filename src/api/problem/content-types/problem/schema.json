@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "problems",
+  "info": {
+    "singularName": "problem",
+    "pluralName": "problems",
+    "displayName": "Problem",
+    "name": "problem",
+    "description": "Эстетические проблемы и показания к процедурам"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "shortName": {
+      "type": "string"
+    },
+    "symptoms": {
+      "type": "text"
+    },
+    "note": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "coverColor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.cover-color",
+      "required": false
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "problems"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-components.seo"
+    }
+  }
+}

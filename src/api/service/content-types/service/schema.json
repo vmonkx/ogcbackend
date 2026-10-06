@@ -99,6 +99,12 @@
         "mobile-blocks.timeline-block",
         "mobile-blocks.alert-block"
       ]
+    },
+    "problems": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::problem.problem",
+      "mappedBy": "services"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_personal_components_statistics",
+  "info": {
+    "icon": "chart-pie",
+    "displayName": "Statistics",
+    "description": "Statistics or achievements for personal"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

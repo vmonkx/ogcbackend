@@ -10,7 +10,7 @@ module.exports = {
    */
   register({ strapi }) {
     strapi.documents.use(async (context, next) => {
-      const uids = ['api::category.category', 'api::service.service'];
+      const uids = ['api::category.category', 'api::service.service', 'api::problem.problem'];
       
       if (uids.includes(context.uid) && ['create', 'update'].includes(context.action)) {
         const data = context.params.data;

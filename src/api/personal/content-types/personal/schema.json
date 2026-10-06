@@ -96,6 +96,17 @@
       ],
       "multiple": false,
       "required": false
+    },
+    "statistics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "personal-components.statistics"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "patientsCount": {
+      "type": "string"
     }
   }
 }

@@ -2,7 +2,7 @@
   "name": "ogcsite-backend",
   "private": true,
   "version": "1.0.0",
-  "description": "A Strapi v4 application",
+  "description": "A Strapi v5 application",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",

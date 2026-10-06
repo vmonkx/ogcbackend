@@ -27,7 +27,7 @@ export interface MainComponentsMainAdvantage extends Struct.ComponentSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
@@ -231,6 +231,19 @@ export interface PersonalComponentsStateCertificate
   };
 }
 
+export interface PersonalComponentsStatistics extends Struct.ComponentSchema {
+  collectionName: 'components_personal_components_statistics';
+  info: {
+    description: 'Statistics or achievements for personal';
+    displayName: 'Statistics';
+    icon: 'chart-pie';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ServiceComponentsAdvantage extends Struct.ComponentSchema {
   collectionName: 'components_service_components_advantages';
   info: {
@@ -262,7 +275,7 @@ export interface ServiceComponentsArticleService
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
   };
@@ -450,6 +463,7 @@ declare module '@strapi/strapi' {
       'personal-components.courses': PersonalComponentsCourses;
       'personal-components.retraining': PersonalComponentsRetraining;
       'personal-components.state-certificate': PersonalComponentsStateCertificate;
+      'personal-components.statistics': PersonalComponentsStatistics;
       'service-components.advantage': ServiceComponentsAdvantage;
       'service-components.article-service': ServiceComponentsArticleService;
       'service-components.compare-item': ServiceComponentsCompareItem;
