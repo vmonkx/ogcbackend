@@ -1,5 +1,3 @@
-const { getAverageColor } = require("fast-average-color-node");
-
 module.exports = getGradient = async (urlImage) => {
   const coverColor = {
     gradientStart: "",
@@ -12,6 +10,7 @@ module.exports = getGradient = async (urlImage) => {
     return { ...coverColor };
   } else {
     try {
+      const { getAverageColor } = await import("fast-average-color-node");
       const color = await getAverageColor(urlImage, {
         width: 50,
       });
