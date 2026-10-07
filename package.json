@@ -32,7 +32,9 @@
     "styled-components": "^6.0.0"
   },
   "overrides": {
-    "@strapi/design-system": "2.2.0"
+    "@strapi/design-system": "2.2.0",
+    "@codemirror/language": "6.12.4",
+    "@strapi/admin": "$@strapi/strapi"
   },
   "author": {
     "name": "Vladislav"
@@ -41,7 +43,7 @@
     "uuid": "fe3d0f24-a440-447f-b409-0f28bcce4097"
   },
   "engines": {
-    "node": ">=20.0.0 <=22.x.x",
+    "node": ">=22.15.0 <23",
     "npm": ">=10.0.0"
   },
   "license": "MIT"
