@@ -30,3 +30,27 @@ generic message without internal error details.
 Run regression checks with `node --test test/price-sync.test.js`, then rebuild
 the admin panel with `npm run build` and restart/redeploy the CMS. Tests stub CMS
 and BFF data access and do not modify production prices.
+
+## Admin bundle contexts
+
+`src/admin/vite.config.js` resolves both `@strapi/strapi/admin` and
+`@strapi/admin/strapi-admin` (including the EE entry) to the ESM exports used by
+this application's Strapi package. Injected components and plugins must share
+one Auth/Notifications context; a nested copy of `@strapi/admin` can otherwise
+cause `useRBAC must be used within Auth` in production. Keep these exact export
+aliases when extending the Vite configuration.
+
+Run `node --test test/admin-singletons.test.js test/price-sync.test.js` before
+building. The singleton regression test deliberately supplies a plugin with its
+own nested admin dependency and checks that Vite resolves it to the host module.
+It tests module resolution, not a live authenticated browser session.
+
+For Dokploy/Railpack, deploy the commit containing this configuration and verify
+that the build log runs the project's `npm run build` script and that the runtime
+starts with `npm start`. Reload the admin page after deployment. A Git pull alone
+is not needed when Dokploy already builds and deploys each new commit.
+
+If the production error persists, collect the browser console stack and run
+`npm ls @strapi/strapi @strapi/admin react react-dom` inside the deployed container
+to compare dependency versions. The reported VPS failure has not been reproduced
+in the local production build, so its specific cause still needs server evidence.
