@@ -1,5 +1,6 @@
 'use strict';
 const getGradient = require("./helpers/getGradient");
+const registerPriceSync = require("./helpers/registerPriceSync");
 
 module.exports = {
   /**
@@ -8,7 +9,8 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register({ strapi }) {
+  async register({ strapi }) {
+    await registerPriceSync(strapi);
     strapi.documents.use(async (context, next) => {
       const uids = ['api::category.category', 'api::service.service', 'api::problem.problem'];
       

@@ -1,42 +1,44 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Button } from '@strapi/design-system';
-import { unstable_useContentManagerContext as useContentManagerContext, useNotification } from '@strapi/strapi/admin';
+import {
+  useNotification,
+  useFetchClient,
+  useRBAC,
+} from '@strapi/strapi/admin';
+
+const SYNC_MODELS = new Set(['api::service.service', 'api::price.price']);
+const SYNC_PERMISSIONS = [{ action: 'admin::services.sync-prices', subject: null }];
 
 const SyncPricesButton = () => {
-  const context = useContentManagerContext();
+  const { slug } = useParams();
+  const { post } = useFetchClient();
+  const { allowedActions, isLoading: isCheckingPermissions } = useRBAC(SYNC_PERMISSIONS);
   const { toggleNotification } = useNotification();
   const [isLoading, setIsLoading] = useState(false);
 
-  // Fallback to safe check if slug is available
-  if (!context || context.slug !== 'api::service.service') {
+  if (
+    !SYNC_MODELS.has(slug) ||
+    isCheckingPermissions || !allowedActions.canSyncPrices
+  ) {
     return null;
   }
 
   const handleSync = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/services/sync-prices', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (!response.ok) {
-        throw new Error('Sync failed');
-      }
-      
-      const data = await response.json();
-      
+      const { data } = await post('/admin/services/sync-prices', {});
+
       toggleNotification({
         type: 'success',
         message: `Успешно: создано ${data.data.created}, обновлено ${data.data.updated}, ошибок ${data.data.errors}`
       });
     } catch (error) {
-      console.error(error);
       toggleNotification({
         type: 'danger',
-        message: 'Ошибка при синхронизации прайс-листов'
+        message: error.status === 409
+          ? 'Синхронизация прайс-листов уже выполняется'
+          : 'Ошибка при синхронизации прайс-листов'
       });
     } finally {
       setIsLoading(false);
@@ -44,10 +46,11 @@ const SyncPricesButton = () => {
   };
 
   return (
-    <Button 
-      variant="secondary" 
+    <Button
+      variant="secondary"
       onClick={handleSync}
       loading={isLoading}
+      disabled={isLoading}
     >
       Синхронизировать прайсы
     </Button>

@@ -21,6 +21,13 @@ const deniedExecutableTypes = [
 ];
 
 module.exports = ({ env }) => ({
+  graphql: {
+    config: {
+      defaultLimit: 25,
+      maxLimit: 100,
+      depthLimit: 10,
+    },
+  },
   'users-permissions': {
     config: {
       jwtManagement: 'refresh',
